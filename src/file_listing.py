@@ -6,7 +6,18 @@ import re
 
 
 def file_listing(filename="src/listing.txt"):
-    pass
+    listy = []
+    with open(filename,'r') as f:
+        for line in f:
+            temp = (re.findall(r"\s([^\s]+)",line))
+            for i in range(3):
+                del temp[0]
+            listy.append((temp))
+    print(listy)
+    return listy
+
+            
+            
 
 def main():
     file_listing()
