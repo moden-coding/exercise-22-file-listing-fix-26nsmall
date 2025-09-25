@@ -12,7 +12,7 @@ def file_listing(filename="src/listing.txt"):
             temp = (re.findall(r"\s([^\s]+)",line))
             for i in range(3):
                 del temp[0]
-            listy.append((temp))
+            listy.append(tuple(temp))
     print(listy)
     return listy
 
